@@ -21,8 +21,8 @@
 <!--<class name="com.EIDSA.testCases.TC_018_Subject_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_020_Sub_VisitSchedule_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_022_PatientLogin_Negative"/>-->
-<class name="com.EIDSA.testCases.TC_024_Visit_Negative"/>
-<!--<class name="com.EIDSA.testCases.TC_026_VisitTemplate_Negative"/>-->
+<!--lass name="com.EIDSA.testCases.TC_024_Visit_Negative"/>-->
+<class name="com.EIDSA.testCases.TC_026_VisitTemplate_Negative"/>
 <!--<class name="com.EIDSA.testCases.TC_029_FieldPrivilege_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_032_SubmitForm_Negative"/>-->
 <!--<class name="com.EIDSA.testCases.TC_038_SubjectSchedule_Negative"/>-->

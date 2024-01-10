@@ -26,82 +26,65 @@ public class VisitTemplate extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
 	
-	@FindBy(xpath = "//*[@id=\"studysetup\"]/li[5]/a/img")
-	@CacheLookup
+	//Menu
+	@FindBy(xpath = "//span[normalize-space()='Visit Template']")
 	WebElement visitTemplate;
 	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div/div/div[1]/div/select")
-	@CacheLookup
+	//Search
+	@FindBy(xpath = "(//select[@class='form-select'])[1]")
 	WebElement SiteCode;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div/div/div[2]/div/select")
-	@CacheLookup
+	@FindBy(xpath = "(//select[@class='form-select'])[2]")
 	WebElement SubjectId;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[2]/div/div[1]/div/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[1]")
 	WebElement VisitName;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[2]/div/div[2]/div/input")
-	@CacheLookup
+	@FindBy(xpath = "(//input[@type='text'])[2]")
 	WebElement VisitNo;
-	
-	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[2]/div/div[3]/span")
-	@CacheLookup
+	@FindBy(xpath = "//span[contains(text(),'Search')]")
 	WebElement Search;
 	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> tableSiteCode;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> tableSub;
-	
 	@FindBy(xpath = "//td[3]")
-	@CacheLookup
 	List<WebElement> tableVisitNo;
-	
 	@FindBy(xpath = "//td[4]")
-	@CacheLookup
 	List<WebElement> tableVisitName;
-	
-	@FindBy(xpath = "//td[11]")
-	@CacheLookup
+	@FindBy(xpath = "//td[11]//i")
 	List<WebElement> tableEdit;
 	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[4]/div/div[2]/div[1]/select")
-	@CacheLookup
 	WebElement template;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[4]/div/div[1]/div/i")
-	@CacheLookup
 	WebElement close;
-	
 	@FindBy(xpath = "//*[@id=\"page-wrapper\"]/div[3]/div[4]/div/div[2]/div[2]/button")
-	@CacheLookup
 	WebElement assign;
 	
 	public void clickVisitTemplate() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		visitTemplate.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
-	public void clickSearch() throws InterruptedException
+	public void selectStudy(String study) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		Search.click();
-		Thread.sleep(3000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
 	}
 	
 	public void clickAssign() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		assign.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitName(String name) throws InterruptedException
@@ -109,12 +92,16 @@ public class VisitTemplate extends AbstractComponent{
 		Thread.sleep(2000);
 		VisitName.sendKeys(name);
 		Thread.sleep(2000);
+		Search.click();
+		Thread.sleep(2000);
 	}
 	
 	public void SearchVisitNo(String no) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		VisitNo.sendKeys(no);
+		Thread.sleep(2000);
+		Search.click();
 		Thread.sleep(2000);
 	}
 	
@@ -139,14 +126,59 @@ public class VisitTemplate extends AbstractComponent{
 		Thread.sleep(2000);
 		Select sel=new Select(template);
 		sel.selectByVisibleText(temp);	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		assign.click();
 		Thread.sleep(2000);
 	}
 	
+	public Boolean siteCodeSearchValidation(String name) throws InterruptedException
+	{
+		boolean st = true;
+		int count =tableSiteCode.size();
+		if (count<1) 
+		{
+			st=false;
+		}
+		else 
+		{
+			for (int i=0; i<tableSiteCode.size();i++)
+			{
+				String scode=tableSiteCode.get(i).getText();
+				if (!(scode.contains(name))) 
+				{
+					st=false;
+					break;
+				}
+			}
+		}
+		return st;
+	}
+	
+	public Boolean subjectIdSearchValidation(String name) throws InterruptedException
+	{
+		boolean st = true;
+		int count =tableSub.size();
+		if (count<1) 
+		{
+			st=false;
+		}
+		else 
+		{
+			for (int i=0; i<tableSub.size();i++)
+			{
+				String scode=tableSub.get(i).getText();
+				if (!(scode.contains(name))) 
+				{
+					st=false;
+					break;
+				}
+			}
+		}
+		return st;
+	}
+	
 	public Boolean visitNameSearchValidation(String name) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitName.size();
 		if (count<1) 
@@ -170,7 +202,6 @@ public class VisitTemplate extends AbstractComponent{
 	
 	public Boolean visitNumSearchValidation(String num) throws InterruptedException
 	{
-		Thread.sleep(3000);
 		boolean st = true;
 		int count =tableVisitNo.size();
 		if (count<1) 
@@ -225,7 +256,6 @@ public class VisitTemplate extends AbstractComponent{
 	
 	public boolean edit(String editname) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = tableVisitName.size();
 		for(int i=0;i<count;i++)
@@ -235,7 +265,7 @@ public class VisitTemplate extends AbstractComponent{
 			if(text.contains(editname))
 			{
 				tableEdit.get(i).click();
-				Thread.sleep(10000);
+				Thread.sleep(2000);
 				sub=true;
 				break;
 			}

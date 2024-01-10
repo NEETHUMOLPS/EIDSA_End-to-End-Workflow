@@ -9,8 +9,9 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<!--<class name="com.EIDSA.testCases.TC_001_loginTest_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_003_forgotPassword_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.Positive.TC_001_loginTest_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.Positive.TC_002_forgotPasswordOrUsername_Positive"/>-->
+<class name="com.EIDSA.testCases.Positive.TC_003_Profiles_Positive"/>
 <!--<class name="com.EIDSA.testCases.TC_005_Roles_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_007_rolePrivilege_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_009_Users_Positive"/>-->
@@ -20,7 +21,7 @@
 <!--<class name="com.EIDSA.testCases.TC_015_site_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_017_Subject_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive"/>-->
-<class name="com.EIDSA.testCases.TC_021_PatientLogin_Positive"/>
+<!--<class name="com.EIDSA.testCases.TC_021_PatientLogin_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_023_Visit_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_025_VisitTemplate_Positive"/>-->
 <!--<class name="com.EIDSA.testCases.TC_027_SitePrivilege_Positive"/>-->

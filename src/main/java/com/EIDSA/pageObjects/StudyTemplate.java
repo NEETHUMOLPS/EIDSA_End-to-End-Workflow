@@ -27,29 +27,36 @@ public class StudyTemplate extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
+	
+	//Menu
 	@FindBy(xpath = "//span[contains(text(),'Study Template')]")
-	@CacheLookup
 	WebElement StudyTemplate;
 	
-	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/select[1]")
-	@CacheLookup
+	@FindBy(xpath = "//select[@placeholder='Search by Status']")
 	WebElement Study;
 	
-	@FindBy(xpath = "//td[1]")
-	@CacheLookup
+	//Web table
+	@FindBy(xpath = "//input[@type='checkbox']")
 	List<WebElement> tableSelect;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> tableTemplateName;
-	
 	@FindBy(xpath = "//td[7]")
-	@CacheLookup
 	List<WebElement> tableStatus;
 	
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
-	@CacheLookup
 	WebElement save;
+	
+
+	public void selectStudy1(String study) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
+	}
 	
 	public static boolean Alert1() throws InterruptedException
 	{
@@ -68,16 +75,16 @@ public class StudyTemplate extends AbstractComponent{
 	
 	public void clickStudyTemplate() throws InterruptedException
 	{	
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
+		jse.executeScript("window.scrollBy(0,2000)");
+		Thread.sleep(2000);
 		elementWait(StudyTemplate);
 		StudyTemplate.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,-1000)");
-		Thread.sleep(3000);		
+		jse1.executeScript("window.scrollBy(0,-2000)");
+		Thread.sleep(2000);		
 	}
 	
 	public void selectStudy(String study) throws InterruptedException
@@ -85,12 +92,11 @@ public class StudyTemplate extends AbstractComponent{
 		Thread.sleep(2000);
 		Select sel=new Select(Study);
 		sel.selectByVisibleText(study);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 		public boolean clickSelect(String subjectid) throws InterruptedException 
 		{
-			Thread.sleep(2000);
 			boolean sub=false;
 			int count = tableTemplateName.size();
 			for(int i=0;i<count;i++)
@@ -100,7 +106,7 @@ public class StudyTemplate extends AbstractComponent{
 				if(text.contains(subjectid))
 				{
 					tableSelect.get(i).click();
-					Thread.sleep(8000);
+					Thread.sleep(2000);
 					break;	
 				}
 			}
@@ -112,7 +118,7 @@ public class StudyTemplate extends AbstractComponent{
 			Thread.sleep(2000);
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,400)");
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 			elementWait(save);
 			save.click();	
 			Thread.sleep(2000);

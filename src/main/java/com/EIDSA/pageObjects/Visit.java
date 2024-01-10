@@ -45,7 +45,7 @@ public class Visit extends AbstractComponent{
 	List<WebElement> tableVisitNo;
 	@FindBy(xpath = "//td[2]")
 	List<WebElement> tableVisitName;
-	@FindBy(xpath = "//td[14//i]")
+	@FindBy(xpath = "//td[14]//i")
 	List<WebElement> tableView;
 	@FindBy(xpath = "//td[13]//i")
 	List<WebElement> tableAssignTemplate;
@@ -95,11 +95,14 @@ public class Visit extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
-	public void language(String lan) throws InterruptedException
+	public void language(String lan1,String lan2) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		Select sel=new Select(language);
-		sel.selectByVisibleText(lan);
+		Select sel=new Select(availableLanguage);
+		sel.selectByVisibleText(lan1);
+		Thread.sleep(2000);
+		Select sel1=new Select(language);
+		sel1.selectByVisibleText(lan2);
 		Thread.sleep(2000);
 	}
 	
@@ -218,7 +221,7 @@ public class Visit extends AbstractComponent{
 			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(8));
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alert1 = driver.switchTo().alert();
-			Assert.assertTrue(alert1.getText().contains("Are you sure, you want to convert this form to Malayalam"));
+			Assert.assertTrue(alert1.getText().contains("Are you sure, you want to convert this form to Arabic"));
 			alert1.accept();
 			return true;
 		} catch (NoAlertPresentException e) {

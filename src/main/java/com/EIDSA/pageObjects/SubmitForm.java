@@ -12,6 +12,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -26,83 +27,63 @@ public class SubmitForm extends AbstractComponent{
 		PageFactory.initElements(driver,this);
 	}
 	
+	//Select study
+	@FindBy(xpath = "//select[@name='account']")
+	WebElement selectStudy;
+	
+	//Menu
 	@FindBy(xpath = "//span[contains(text(),'Submit Form')]")
-	@CacheLookup
 	WebElement SubmitForm;
 	
+	//Web table
 	@FindBy(xpath = "//td[1]")
-	@CacheLookup
 	List<WebElement> TableSiteCode;
-	
 	@FindBy(xpath = "//td[2]")
-	@CacheLookup
 	List<WebElement> TableSubId;
-	
 	@FindBy(xpath = "//td[3]")
-	@CacheLookup
 	List<WebElement> TableVisitName;
-	
 	@FindBy(xpath = "//td[6]")
-	@CacheLookup
 	List<WebElement> TableSubmitForm;
 	
 	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/i[1]")
-	@CacheLookup
 	WebElement submitForm;
-	
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
-	@CacheLookup
 	WebElement Save;
-	
 	@FindBy(xpath = "//button[contains(text(),'Review And Submit')]")
-	@CacheLookup
 	WebElement ReviewAndSubmit;
-	
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")
-	@CacheLookup
 	WebElement SiteIdCode;
-	
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
-	@CacheLookup
 	WebElement PatientScreeningNumber;
-	
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/div[1]/div[1]/div[1]/input[1]")
-	@CacheLookup
 	WebElement VisitDate;
 	
+	//Error messages
 	@FindBy(xpath = "(//span[contains(text(),'Please enter a value')])[1]")
-	@CacheLookup
 	WebElement err1;
-	
 	@FindBy(xpath = "(//span[contains(text(),'Please enter a value')])[2]")
-	@CacheLookup
 	WebElement err2;
-	
 	@FindBy(xpath = "(//span[contains(text(),'Please enter a value')])[3]")
-	@CacheLookup
 	WebElement err3;
-	
 	@FindBy(xpath = "(//span[contains(text(),'Please enter a value')])[4]")
-	@CacheLookup
 	WebElement err4;
-	
 	@FindBy(xpath = "//span[contains(text(),'Please enter a value between 100 and 999')]")
-	@CacheLookup
 	WebElement err5;
-	
 	@FindBy(xpath = "//span[contains(text(),'Number of characters should be between 3 and 7')]")
-	@CacheLookup
 	WebElement err6;
-	
 	@FindBy(xpath = "//span[contains(text(),'Number of characters should be between 2 and 4')]")
-	@CacheLookup
 	WebElement err7;
 	
 	@FindBy(xpath = "//body/div[@id='app']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/div[2]/div[1]/div[1]/input[1]")
-	@CacheLookup
 	WebElement Initials;
 	
-	
+	public void selectStudy1(String study) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		Select sel = new Select(selectStudy);
+		sel.selectByVisibleText(study);
+		Thread.sleep(2000);
+	}
 	
 	public String errorMsg1()
 	{
@@ -178,15 +159,15 @@ public class SubmitForm extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		SubmitForm.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	
 	public void reviewAndSubmit() throws InterruptedException
 	{
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(ReviewAndSubmit);
 		ReviewAndSubmit.click();
 		Thread.sleep(2000);
@@ -196,7 +177,7 @@ public class SubmitForm extends AbstractComponent{
 	{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		elementWait(Save);
 		Save.click();
 		Thread.sleep(2000);
@@ -204,7 +185,6 @@ public class SubmitForm extends AbstractComponent{
 	
 	public boolean selectSubmitForm(String name) throws InterruptedException 
 	{
-		Thread.sleep(2000);
 		boolean sub=false;
 		int count = TableVisitName.size();
 		for(int i=0;i<count;i++)
@@ -214,7 +194,7 @@ public class SubmitForm extends AbstractComponent{
 			if(text.contains(name))
 			{
 				TableSubmitForm.get(i).click();
-				Thread.sleep(8000);
+				Thread.sleep(2000);
 				break;	
 			}
 		}
@@ -231,7 +211,7 @@ public class SubmitForm extends AbstractComponent{
 		PatientScreeningNumber.clear();
 		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys("101");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,800)");
 		VisitDate.clear();
@@ -256,7 +236,7 @@ public class SubmitForm extends AbstractComponent{
 		PatientScreeningNumber.clear();
 		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys("101");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,800)");
 		VisitDate.clear();
@@ -276,28 +256,28 @@ public class SubmitForm extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		SiteIdCode.sendKeys(code);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void clickPatientScreeningNum(String num) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		PatientScreeningNumber.sendKeys(num);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 
 	public void clickdate(String date) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		VisitDate.sendKeys(date);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	public void clickintials(String in) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		Initials.sendKeys(in);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	
