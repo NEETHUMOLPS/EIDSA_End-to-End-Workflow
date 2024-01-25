@@ -9,54 +9,24 @@
 <test name="EIDSA App Test">
 <parameter name="browser" value="chrome" />
 <classes>
-<!--<class name="com.EIDSA.testCases.Positive.TC_001_loginTest_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.Positive.TC_002_forgotPasswordOrUsername_Positive"/>-->
-<class name="com.EIDSA.testCases.Positive.TC_003_Profiles_Positive"/>
-<!--<class name="com.EIDSA.testCases.TC_005_Roles_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_007_rolePrivilege_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_009_Users_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_Screens_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_011_study_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_013_StudyVisit_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_015_site_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_017_Subject_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_019_Sub_VisitScheduleList_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_021_PatientLogin_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_023_Visit_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_025_VisitTemplate_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_027_SitePrivilege_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_028_FieldPrivilege_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_030_StudyTemplate_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_031_SubmitForm_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_033_FormSummary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_034_Forms_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_035_FormsInReview_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_036_ArchiveForms_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_037_SubjectSchedule_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_039_Users_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_040_MainDashboard_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_041_NurseDashboard_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_042_StudySummary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_043_SiteSummary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_044_VisitSummary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_045_NurseDiary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_046_GoogleFit_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_047_IOTDevices_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_048_IOTPatients_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_049_DataEntry_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_051_Template_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_052_DigitalForms_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_053_UnscheduledVisit_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_054_DocumentSummary_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_056_SentQuery_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_057_ReceivedQuery_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_058_AllQuery_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_059_GeneralQuery_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_061_SubjectTransfer_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_063_FormTransfer_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_065_DesignForm_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_067_DocumentApproval_Positive"/>-->
-<!--<class name="com.EIDSA.testCases.TC_068_Folder_Document_Positive"/>-->
+<!--<class name="com.EIDSA.testCases.TC_001_LoginTest_Negative"/>
+<class name="com.EIDSA.testCases.TC_002_ForgotPasswordOrUsername_Positive"/>
+<class name="com.EIDSA.testCases.TC_003_LoginTest_Positive"/>
+<class name="com.EIDSA.testCases.TC_004_Profiles_Positive"/>
+<class name="com.EIDSA.testCases.TC_005_Roles_Positive"/>
+<class name="com.EIDSA.testCases.TC_006_RolePrivilege_Positive"/>
+<class name="com.EIDSA.testCases.TC_007_Users_Positive"/>
+<class name="com.EIDSA.testCases.TC_008_Study_Positive"/>
+<class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive"/>
+<class name="com.EIDSA.testCases.TC_010_FillForm_Positive"/>
+<class name="com.EIDSA.testCases.TC_011_DMS_Positive"/>
+
+-->
+
+
+
+<class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive"/>
+
 <!--  <methods>
                <include name="negativeTest6" />
             </methods>-->

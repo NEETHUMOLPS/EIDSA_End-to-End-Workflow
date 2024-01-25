@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -60,11 +61,11 @@ public class BaseClass {
 		
 	}
 	
-	//@AfterClass
-	//public void tearDown()
-	//{
-	//driver.quit();
-	//}
+	@AfterClass
+	public void tearDown()
+	{
+	driver.quit();
+	}
 	
 	public void captureScreen(WebDriver driver, String tname) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;

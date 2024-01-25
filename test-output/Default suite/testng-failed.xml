@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.EIDSA.testCases.TC_024_Visit_Negative">
+      <class name="com.EIDSA.testCases.TC_005_Roles_Positive">
         <methods>
           <include name="setup"/>
-          <include name="assigningTemplate"/>
-          <include name="translate"/>
+          <include name="roleCreation"/>
+          <include name="roleEdit"/>
+          <include name="tearDown"/>
+          <include name="roleDelete"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_024_Visit_Negative -->
+      </class> <!-- com.EIDSA.testCases.TC_005_Roles_Positive -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

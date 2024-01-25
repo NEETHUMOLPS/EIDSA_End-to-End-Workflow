@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import com.EIDSA.pageObjects.LoginPage;
@@ -53,16 +54,16 @@ public class BaseClassTest {
 		driver.manage().window().maximize();
 		logger.info("URL is opened");
 		LoginPage lp=new LoginPage(driver);
-		lp.login("Neethumol","neethumolp@datamatica.uk","Neethu@4");
+		lp.login("Neethumol","neethumolp@datamatica.uk","Neethu@8");
 		Thread.sleep(4000);
 		
 	}
 	
-	//@AfterTest
-	//public void tearDown()
-	//{
-	//driver.quit();
-	//}
+	@AfterTest
+	public void tearDown()
+	{
+	driver.quit();
+	}
 	
 	public void captureScreen(WebDriver driver, String tname) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;

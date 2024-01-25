@@ -27,6 +27,8 @@ public class SitePage extends AbstractComponent{
 	}
 	
 	//Site menu
+	@FindBy(xpath = "//span[normalize-space()='Items']")
+	WebElement items;
 	@FindBy(xpath = "//span[normalize-space()='Sites']")
 	WebElement site;
 	
@@ -249,6 +251,8 @@ public class SitePage extends AbstractComponent{
 	public void clickSite() throws InterruptedException
 	{
 		Thread.sleep(2000);
+		items.click();
+		Thread.sleep(2000);
 		site.click();
 		Thread.sleep(2000);
 	}
@@ -423,7 +427,7 @@ public class SitePage extends AbstractComponent{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 			wait.until(ExpectedConditions.alertIsPresent());
 			Alert alert = driver.switchTo().alert();
-			Assert.assertTrue(alert.getText().contains("Deleted successfully."));
+			Assert.assertTrue(alert.getText().contains("Deleted Successfully."));
 			alert.accept();
 			return true;
 		} catch (NoAlertPresentException e) {

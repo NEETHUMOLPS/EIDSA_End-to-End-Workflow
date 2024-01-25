@@ -100,7 +100,7 @@ public class RolePrivilege extends AbstractComponent{
 		Screens1.click();
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,2000)");
+		jse.executeScript("window.scrollBy(0,500)");
 		elementWait(Save);
 		Thread.sleep(3000);
 		Save.click();

@@ -103,9 +103,9 @@ public class UserPage extends AbstractComponent{
 	WebElement setPrivilege;
 	@FindBy(xpath="//div[@id='page-wrapper']/div[3]/div/div/div/div")
 	WebElement selectStudy1;
-	@FindBy(xpath="//span[normalize-space()='Study - 002']")
+	@FindBy(xpath="//span[normalize-space()='DMS13']")
 	WebElement selectStudy2;
-	@FindBy(xpath="//div[@id='page-wrapper']/div[3]/div/div/div/div/div[2]/ul/li[4]")
+	@FindBy(xpath="//span[normalize-space()='001']")
 	WebElement selectStudy3;
 	@FindBy(xpath="//div[@id='page-wrapper']/div[3]/div/div/div/div/span[2]")
 	WebElement selectStudy4;
@@ -398,6 +398,22 @@ public class UserPage extends AbstractComponent{
 			wait1.until(ExpectedConditions.alertIsPresent());
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("User study privilege saved successfully."));
+			alert1.accept();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+		
+	}
+	
+	public static boolean privilegeAlert1() throws InterruptedException
+	{
+		try
+		{
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait1.until(ExpectedConditions.alertIsPresent());
+			Alert alert1 = driver.switchTo().alert();
+			Assert.assertTrue(alert1.getText().contains("User study privilege updated successfully."));
 			alert1.accept();
 			return true;
 		} catch (NoAlertPresentException e) {

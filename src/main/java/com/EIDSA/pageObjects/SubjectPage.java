@@ -109,10 +109,8 @@ public class SubjectPage extends AbstractComponent{
 	@FindBy(xpath="//td[12]//i")
 	List<WebElement> tableWithdraw;;	
 	@FindBy(xpath="//td[13]//i")
-	List<WebElement> tableAuditTrail;	
-	@FindBy(xpath="//td[14]//i")
 	List<WebElement> tableDelete;	
-	@FindBy(xpath="//td[15]//i")
+	@FindBy(xpath="//td[14]//i")
 	List<WebElement> tableDocument;
 	
 	//Create schedule
@@ -259,7 +257,7 @@ public class SubjectPage extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
-	public void createSubject(String code,String subid,String date) throws InterruptedException
+	public void createSubject(String code,String subid,String date,String in) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		subject.click();
@@ -272,6 +270,9 @@ public class SubjectPage extends AbstractComponent{
 		subjectId.sendKeys(subid);
 		Thread.sleep(2000);
 		enrolmentDate.sendKeys(date);
+		Thread.sleep(2000);
+		Select inv=new Select(investigator);
+		inv.selectByVisibleText(in);
 		Thread.sleep(2000);
 		save.click();	
 		Thread.sleep(2000);
@@ -500,21 +501,7 @@ public class SubjectPage extends AbstractComponent{
 			return false;
 		}			
 	}
-	
-	public void auditTrail(String sub) throws InterruptedException
-	{
-		int count=tableSubId.size();
-		for(int i=0;i<count;i++)
-		{
-			String sublist=tableSubId.get(i).getText();
-			if(sublist.contains(sub))
-			{
-				tableAuditTrail.get(i).click();
-				Thread.sleep(2000);
-				break;
-			}
-		}
-	}
+
 	
 	public void delSubject(String subcode) throws InterruptedException
 	{
@@ -538,6 +525,12 @@ public class SubjectPage extends AbstractComponent{
 			Alert alert1 = driver.switchTo().alert();
 			Assert.assertTrue(alert1.getText().contains("Are you sure you want to delete this patient?"));
 			alert1.accept();
+			Thread.sleep(2000);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			Assert.assertTrue(alert.getText().contains("Deleted Successfully."));
+			alert.accept();
 			return true;
 		} catch (NoAlertPresentException e) {
 			return false;

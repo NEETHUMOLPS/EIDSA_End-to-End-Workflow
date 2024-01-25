@@ -41,10 +41,10 @@ public class LoginPage extends AbstractComponent{
 	WebElement btnLogout;
 	
 	//Error
-	@FindBy(xpath="//span[contains(text(),'Invalid email or password.')]")
+	@FindBy(xpath="//div[contains(text(),'Invalid email or password.')]")
 	@CacheLookup
 	WebElement err1;	
-	@FindBy(xpath="//span[contains(text(),'The username is not associated with this account.')]")
+	@FindBy(xpath="//div[contains(text(),'The username is not associated with this account.')]")
 	@CacheLookup
 	WebElement err2;
 	@FindBy(xpath="//span[contains(text(),'The username field is required')]")
@@ -68,7 +68,7 @@ public class LoginPage extends AbstractComponent{
 		txtPassword.sendKeys(pwd);
 		Thread.sleep(2000);
 		btnLogin.click();		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 	}
 	
 	public void clearLoginCredentials() throws InterruptedException
@@ -142,6 +142,4 @@ public class LoginPage extends AbstractComponent{
 		btnLogout.click();
 		Thread.sleep(2000);
 	}
-	
-
 }
