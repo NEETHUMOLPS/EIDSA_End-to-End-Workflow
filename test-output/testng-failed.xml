@@ -7,23 +7,14 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive">
+      <class name="com.EIDSA.testCases.TC_010_FillForm_Positive">
         <methods>
-          <include name="assignTemplate"/>
-          <include name="editVisit"/>
-          <include name="siteEdit"/>
-          <include name="createSubject" invocation-numbers="0 1"/>
-          <include name="siteDelete"/>
-          <include name="tearDown"/>
-          <include name="delete"/>
-          <include name="schedule"/>
           <include name="setup"/>
-          <include name="deleteVisit"/>
-          <include name="SubjectEdit"/>
-          <include name="createSite" invocation-numbers="0 1"/>
-          <include name="createVisit" invocation-numbers="1"/>
+          <include name="FormQuery"/>
+          <include name="FormVerify"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_009_StudyProfile_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_010_FillForm_Positive -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

@@ -37,7 +37,7 @@ public class TC_009_StudyProfile_Positive extends BaseClassTest {
 		sp.backToStudyProfile();		
 	}
 	
-	@Test(priority=2, description = "Update the user privilege")
+	/*@Test(priority=2, description = "Update the user privilege")
 	public void userPrivilege() throws InterruptedException
 	{
 		UserPage up=new UserPage(driver);
@@ -64,7 +64,7 @@ public class TC_009_StudyProfile_Positive extends BaseClassTest {
 		sp.designCompleteAlert();
 		sp.backToStudyProfile();
 		
-	}
+	}*/
 	
 	@Test(priority=4, description = "Retire the form")
 	public void retireForm() throws IOException, InterruptedException
@@ -76,14 +76,14 @@ public class TC_009_StudyProfile_Positive extends BaseClassTest {
 		
 	}
 	
-	@Test(dataProvider="DD2",priority=5, description = "Create new visit")
-	public void createVisit(String vno,String vname,String vtype,String temp) throws IOException, InterruptedException
+	@Test(priority=5, description = "Create new visit")
+	public void createVisit() throws IOException, InterruptedException
 	{
 		StudyProfile sp = new StudyProfile(driver);
-		sp.createVisit01(vno,vname,vtype,temp);
+		sp.createVisit01("V01","V01","Home Visit","Patient Information (1.0)");
 		sp.visitCreationAlert();
 		Thread.sleep(2000);
-		sp.createVisit02("V02","V02","Home Visit","FO1 (1.0)");
+		sp.createVisit02("V02","V02","Home Visit","Diabetes (1.0)");
 		sp.visitCreationAlert();
 		Thread.sleep(2000);
 	}
@@ -141,11 +141,13 @@ public class TC_009_StudyProfile_Positive extends BaseClassTest {
 	public void siteDelete() throws IOException, InterruptedException
 	{	
 		SitePage sp = new SitePage(driver);
+		StudyProfile st = new StudyProfile(driver);
 		sp.searchSiteCode("S02");
 		sp.delSiteIcon("S02");
 		sp.deleteAlert();
 		logger.info("Site deleted");
 		Thread.sleep(2000);
+		st.StudyProfile();
 	}
 	
 	@Test(dataProvider="DD4",priority=12, description = "Create new subject")
@@ -197,7 +199,7 @@ public class TC_009_StudyProfile_Positive extends BaseClassTest {
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\StudyProfile1.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\StudyProfile1.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	
@@ -214,11 +216,11 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 
 	}
 	
-	@DataProvider(name="DD2")
+	/*@DataProvider(name="DD2")
 	 String [][] getData2() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\StudyProfile1.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\StudyProfile1.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet2");
 	int colcount=XLUtility.getCellCount(path, "Sheet2", 1);
 	
@@ -233,13 +235,13 @@ int rownum=XLUtility.getRowCount(path, "Sheet2");
 	
 	return data;	
 
-	}
+	}*/
 	
 	@DataProvider(name="DD3")
 	 String [][] getData3() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\StudyProfile1.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\StudyProfile1.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet3");
 	int colcount=XLUtility.getCellCount(path, "Sheet3", 1);
 	
@@ -261,7 +263,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet3");
 	 String [][] getData4() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\StudyProfile1.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\StudyProfile1.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet4");
 	int colcount=XLUtility.getCellCount(path, "Sheet4", 1);
 	

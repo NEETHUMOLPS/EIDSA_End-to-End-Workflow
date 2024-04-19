@@ -46,6 +46,12 @@ public class ReadConfig {
 		return geckodriverpath;
 	}
 
+	public String getEmail() {
+		String email = pro.getProperty("email");
+		return email;
+		
+	}
+
 	
 	
 }

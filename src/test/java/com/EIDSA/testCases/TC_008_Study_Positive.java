@@ -44,7 +44,7 @@ public class TC_008_Study_Positive extends BaseClassTest {
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\Study.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Study.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	

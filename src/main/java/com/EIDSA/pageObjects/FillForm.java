@@ -72,7 +72,7 @@ public class FillForm extends AbstractComponent{
 	WebElement view1;
 	
 	//Data entry
-	@FindBy(xpath = "//a[normalize-space()='001 - 001']")
+	@FindBy(xpath = "//a[normalize-space()='V01 - V01']")
 	WebElement dataEntry;
 	
 	//Map unassigned form
@@ -284,9 +284,13 @@ public class FillForm extends AbstractComponent{
 	public void fillFormReviewAndSubmit(String nm) throws InterruptedException
 	{
 		Thread.sleep(2000);
+		nameField.clear();
+		Thread.sleep(2000);
 		nameField.sendKeys(nm);
 		Thread.sleep(2000);
-		Thread.sleep(2000);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,100)");
+		elementWait(ReviewAndSubmit);
 		ReviewAndSubmit.click();
 		Thread.sleep(2000);
 	}

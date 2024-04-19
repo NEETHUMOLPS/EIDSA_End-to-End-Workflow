@@ -23,6 +23,7 @@ public class BaseClassTest {
 	ReadConfig readconfig = new ReadConfig();
 	public String baseURL=readconfig.getApplicationURL();
 	public String username=readconfig.getUsername();
+	public String email=readconfig.getEmail();
 	public String password=readconfig.getPassword();
 	public String chromepath=readconfig.getChromePath();
 
@@ -54,7 +55,7 @@ public class BaseClassTest {
 		driver.manage().window().maximize();
 		logger.info("URL is opened");
 		LoginPage lp=new LoginPage(driver);
-		lp.login("Neethumol","neethumolp@datamatica.uk","Neethu@8");
+		lp.login(username,email,password);
 		Thread.sleep(4000);
 		
 	}

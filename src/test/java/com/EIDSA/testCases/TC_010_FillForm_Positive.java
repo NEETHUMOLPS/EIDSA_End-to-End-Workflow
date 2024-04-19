@@ -4,23 +4,23 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.EIDSA.pageObjects.FillForm;
 import com.EIDSA.pageObjects.LoginPage;
 import com.EIDSA.pageObjects.SubmittedForm;
+import com.EIDSA.utilities.XLUtility;
 
-import Base.BaseClass;
+import Base.BaseClassTest;
 
-public class TC_010_FillForm_Positive extends BaseClass {
+public class TC_010_FillForm_Positive extends BaseClassTest {
 	
 	@Test(priority=1, description = "Save the form")
 	public void SaveForm() throws IOException, InterruptedException
 	{
 		FillForm fp = new FillForm(driver);
-		LoginPage lp=new LoginPage(driver);
-		lp.login("sujis","sujis@yopmail.com","Neethu@8");
-		fp.selectStudy1("DMS11");
+		fp.selectStudy1("DMS19");
 		fp.clickFillForm();
 		fp.selectForm2();
 		fp.fillFormSave("Neethu");
@@ -79,15 +79,37 @@ public class TC_010_FillForm_Positive extends BaseClass {
 		fs.verifyFormAlert();
 	}
 	
-	@Test(priority=8, description = "Sign the submitted form")
-	public void sign() throws IOException, InterruptedException
+	@Test(dataProvider = "DD1",priority=8, description = "Sign the submitted form")
+	public void sign(String email,String pwd) throws IOException, InterruptedException
 	{
 		SubmittedForm fs = new SubmittedForm(driver);
 		LoginPage lp=new LoginPage(driver);
-		fs.sign("sujis@yopmail.com", "Neethu@8");
+		fs.sign(email,pwd);
 		lp.logout();
 		
 	}
+	
+	@DataProvider(name="DD1")
+	 String [][] getData1() throws IOException
+	{
+		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Sign.xlsx";
+int rownum=XLUtility.getRowCount(path, "Sheet1");
+	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
+	
+	String data[][]=new String[rownum][colcount];
+	for(int i=1;i<=rownum;i++)
+	{
+		for(int j=0;j<colcount;j++)
+		{
+			data[i-1][j]=XLUtility.getCellData(path, "Sheet1", i, j);
+		}
+	}
+	
+	return data;	
+
+	}
+		
 
 
 }

@@ -607,6 +607,13 @@ public class StudyProfile extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
+	public void StudyProfile() throws InterruptedException
+	{	
+		Thread.sleep(2000);
+		studyProfile.click();
+		Thread.sleep(2000);
+	}
+	
 	public static boolean designCompleteAlert() throws InterruptedException
 	{
 		try

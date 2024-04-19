@@ -38,7 +38,7 @@ public class TC_002_ForgotPasswordOrUsername_Positive extends BaseClass{
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA\\Login.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Login.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet3");
 	int colcount=XLUtility.getCellCount(path, "Sheet3", 1);
 	
