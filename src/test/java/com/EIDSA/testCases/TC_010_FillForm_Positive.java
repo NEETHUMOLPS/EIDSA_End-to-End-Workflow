@@ -20,7 +20,7 @@ public class TC_010_FillForm_Positive extends BaseClassTest {
 	public void SaveForm() throws IOException, InterruptedException
 	{
 		FillForm fp = new FillForm(driver);
-		fp.selectStudy1("DMS19");
+		fp.selectStudy1("IDS01");
 		fp.clickFillForm();
 		fp.selectForm2();
 		fp.fillFormSave("Neethu");
@@ -93,7 +93,7 @@ public class TC_010_FillForm_Positive extends BaseClassTest {
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Sign.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Sign.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	

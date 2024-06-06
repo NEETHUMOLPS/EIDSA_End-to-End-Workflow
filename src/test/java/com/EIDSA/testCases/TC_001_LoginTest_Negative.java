@@ -14,20 +14,22 @@ public class TC_001_LoginTest_Negative extends BaseClass{
 	{
 		LoginPage lp=new LoginPage(driver);
 		lp.login(Username,Email, Password);
-		Thread.sleep(10000);
+		//Thread.sleep(10000);
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(lp.ErrorMsg2(), "The username is not associated with this account.");
 		softAssert.assertAll();
         logger.info("Negative test passed");
-        lp.clearLoginCredentials();
+       // driver.navigate().refresh();
+       
 	}
 
 	@Test(dataProvider="DD2",priority=2, description = "Login with invalid email/password")
 	public void loginWithInvalidEmailAndPassword(String Username,String Email, String Password) throws InterruptedException
 	{
 		LoginPage lp=new LoginPage(driver);
+		lp.clearLoginCredentials();
 		lp.login(Username,Email, Password);
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(lp.ErrorMsg1(), "Invalid email or password.");
 		softAssert.assertAll();
@@ -41,7 +43,7 @@ public class TC_001_LoginTest_Negative extends BaseClass{
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Login.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Login.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	
@@ -62,7 +64,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 	 String [][] getData2() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Login.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Login.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet2");
 	int colcount=XLUtility.getCellCount(path, "Sheet2", 1);
 	

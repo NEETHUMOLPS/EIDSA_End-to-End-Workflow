@@ -33,8 +33,8 @@ public class TC_008_Study_Positive extends BaseClassTest {
 	{
 		StudyPage sp = new StudyPage(driver);
 		sp.clickStudyList();
-		sp.searchStudyId("DMS02");
-		sp.delStudyIcon("DMS02");
+		sp.searchStudyId("Del01");
+		sp.delStudyIcon("Del01");
 		sp.deleteAlert();
 		logger.info("Study deleted successfully");
 	}
@@ -44,7 +44,7 @@ public class TC_008_Study_Positive extends BaseClassTest {
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Study.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Study.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	

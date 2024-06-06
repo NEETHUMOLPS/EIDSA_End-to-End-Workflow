@@ -51,7 +51,7 @@ public class TC_004_Profiles_Positive extends BaseClass{
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	
@@ -72,7 +72,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 	 String [][] getData2() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet2");
 	int colcount=XLUtility.getCellCount(path, "Sheet2", 1);
 	
@@ -93,7 +93,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet2");
 	 String [][] getData3() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet3");
 	int colcount=XLUtility.getCellCount(path, "Sheet3", 1);
 	
@@ -114,7 +114,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet3");
 	 String [][] getData4() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\Desktop\\EIDSA_Integration\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet4");
 	int colcount=XLUtility.getCellCount(path, "Sheet4", 1);
 	

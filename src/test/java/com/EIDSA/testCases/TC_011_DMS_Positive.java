@@ -17,6 +17,8 @@ public class TC_011_DMS_Positive extends BaseClassTest {
 	public void FolderCreation() throws IOException, InterruptedException
 	{
 		DMS dm = new DMS(driver);
+		FillForm fp = new FillForm(driver);
+		fp.selectStudy1("IDS01");
 		dm.DMS();
 		dm.documentUpload();
 		dm.FolderCreation("01");

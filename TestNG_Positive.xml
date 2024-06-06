@@ -25,7 +25,7 @@
 
 
 
-<class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive"/>
+<class name="com.EIDSA.testCases.TC_011_DMS_Positive"/>
 
 <!--  <methods>
                <include name="negativeTest6" />

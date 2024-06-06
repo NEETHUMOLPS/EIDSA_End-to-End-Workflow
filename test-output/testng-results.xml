@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-19T13:07:29 IST" name="Medical Application" finished-at="2024-04-19T13:13:29 IST" duration-ms="359633">
+  <suite started-at="2024-06-06T09:11:38 IST" name="Medical Application" finished-at="2024-06-06T09:13:35 IST" duration-ms="116767">
     <groups>
     </groups>
-    <test started-at="2024-04-19T13:07:29 IST" name="EIDSA App Test" finished-at="2024-04-19T13:13:29 IST" duration-ms="359633">
-      <class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:07:30 IST" name="setup" finished-at="2024-04-19T13:08:04 IST" duration-ms="34117" status="PASS">
+    <test started-at="2024-06-06T09:11:38 IST" name="EIDSA App Test" finished-at="2024-06-06T09:13:35 IST" duration-ms="116767">
+      <class name="com.EIDSA.testCases.TC_011_DMS_Positive">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:11:39 IST" name="setup" finished-at="2024-06-06T09:12:20 IST" duration-ms="40741" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,141 +18,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createTemplate(java.lang.String,java.lang.String)[pri:1, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:08:06 IST" name="createTemplate" description="Create new template" data-provider="DD1" finished-at="2024-04-19T13:09:52 IST" duration-ms="106085" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DMS19]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[DMS19]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="FolderCreation()[pri:1, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:12:20 IST" name="FolderCreation" description="Create new folder" finished-at="2024-06-06T09:12:42 IST" duration-ms="21941" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTemplate -->
-        <test-method signature="retireForm()[pri:4, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:09:52 IST" name="retireForm" description="Retire the form" finished-at="2024-04-19T13:10:07 IST" duration-ms="15471" status="PASS">
+        </test-method> <!-- FolderCreation -->
+        <test-method signature="FolderEdit()[pri:2, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:12:42 IST" name="FolderEdit" description="Edit the folder details" finished-at="2024-06-06T09:12:55 IST" duration-ms="13078" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- retireForm -->
-        <test-method signature="createVisit()[pri:5, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:10:07 IST" name="createVisit" description="Create new visit" finished-at="2024-04-19T13:10:43 IST" duration-ms="36285" status="PASS">
+        </test-method> <!-- FolderEdit -->
+        <test-method signature="uploadDocument()[pri:3, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:12:55 IST" name="uploadDocument" description="Upload the document to the folder" finished-at="2024-06-06T09:13:11 IST" duration-ms="15854" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createVisit -->
-        <test-method signature="assignTemplate()[pri:6, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:10:43 IST" name="assignTemplate" description="Assign template to the visit" finished-at="2024-04-19T13:10:54 IST" duration-ms="10825" status="PASS">
+        </test-method> <!-- uploadDocument -->
+        <test-method signature="viewDocument()[pri:4, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:13:11 IST" name="viewDocument" description="View the uploaded document" finished-at="2024-06-06T09:13:22 IST" duration-ms="10742" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- assignTemplate -->
-        <test-method signature="editVisit()[pri:7, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:10:54 IST" name="editVisit" description="Edit the visit details" finished-at="2024-04-19T13:11:05 IST" duration-ms="10829" status="PASS">
+        </test-method> <!-- viewDocument -->
+        <test-method signature="approveDocument()[pri:5, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:13:22 IST" name="approveDocument" description="Approve the document" finished-at="2024-06-06T09:13:34 IST" duration-ms="12876" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editVisit -->
-        <test-method signature="deleteVisit()[pri:8, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:11:05 IST" name="deleteVisit" description="Delete the visit" finished-at="2024-04-19T13:11:14 IST" duration-ms="8590" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteVisit -->
-        <test-method signature="createSite(java.lang.String)[pri:9, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:11:14 IST" name="createSite" description="Create new site" data-provider="DD3" finished-at="2024-04-19T13:11:22 IST" duration-ms="8404" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[S01]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSite -->
-        <test-method signature="createSite(java.lang.String)[pri:9, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:11:22 IST" name="createSite" description="Create new site" data-provider="DD3" finished-at="2024-04-19T13:11:31 IST" duration-ms="8368" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[S02]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSite -->
-        <test-method signature="siteEdit()[pri:10, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:11:31 IST" name="siteEdit" description="Edit the site details" finished-at="2024-04-19T13:11:55 IST" duration-ms="24151" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- siteEdit -->
-        <test-method signature="siteDelete()[pri:11, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:11:55 IST" name="siteDelete" description="Delete the site" finished-at="2024-04-19T13:12:12 IST" duration-ms="16645" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- siteDelete -->
-        <test-method signature="createSubject(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:12, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:12:12 IST" name="createSubject" description="Create new subject" data-provider="DD4" finished-at="2024-04-19T13:12:29 IST" duration-ms="17316" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[S01]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[P01]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[18-05-2024]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Neethumol P S]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSubject -->
-        <test-method signature="createSubject(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:12, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:12:29 IST" name="createSubject" description="Create new subject" data-provider="DD4" finished-at="2024-04-19T13:12:47 IST" duration-ms="17057" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[S01]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[P02]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[18-05-2024]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Neethumol P S]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSubject -->
-        <test-method signature="SubjectEdit()[pri:13, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:12:47 IST" name="SubjectEdit" description="Edit the subject details" finished-at="2024-04-19T13:13:01 IST" duration-ms="14770" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SubjectEdit -->
-        <test-method signature="schedule()[pri:14, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:13:01 IST" name="schedule" description="Schedule the visit for a subject" finished-at="2024-04-19T13:13:14 IST" duration-ms="12250" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- schedule -->
-        <test-method signature="delete()[pri:15, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:13:14 IST" name="delete" description="Delete the subject" finished-at="2024-04-19T13:13:28 IST" duration-ms="14827" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.TC_009_StudyProfile_Positive@7d0b7e3c]" started-at="2024-04-19T13:13:28 IST" name="tearDown" finished-at="2024-04-19T13:13:29 IST" duration-ms="371" status="PASS">
+        </test-method> <!-- approveDocument -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.EIDSA.testCases.TC_011_DMS_Positive@2892d68]" started-at="2024-06-06T09:13:34 IST" name="tearDown" finished-at="2024-06-06T09:13:35 IST" duration-ms="451" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.EIDSA.testCases.TC_009_StudyProfile_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_011_DMS_Positive -->
     </test> <!-- EIDSA App Test -->
   </suite> <!-- Medical Application -->
 </testng-results>

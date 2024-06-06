@@ -15,7 +15,7 @@ public class TC_005_Roles_Positive extends BaseClassTest {
 	{
 		Roles rp=new Roles(driver);
 		rp.clickRoles();
-		rp.createRoles("Automation Tester","Testing");
+		rp.createRoles("Automation Tester","");
 		rp.Alert1();
 		logger.info("Role added successfully");	
 	}
@@ -27,7 +27,7 @@ public class TC_005_Roles_Positive extends BaseClassTest {
 		Roles rp=new Roles(driver);
 		rp.searchRoles("Automation Tester");
 		rp.edit("Automation Tester");
-		rp.editData("NA");
+		rp.editData("Testing");
 		rp.Alert2();
 		logger.info("Role updated");			
 	 }

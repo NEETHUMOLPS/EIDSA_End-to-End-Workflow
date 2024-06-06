@@ -111,9 +111,9 @@ public class SubmittedForm extends AbstractComponent{
 		Thread.sleep(2000);
 		recipients3.click();
 		Thread.sleep(2000);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		/*JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(100)");
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 		submit.click();
 		Thread.sleep(2000);
 	}

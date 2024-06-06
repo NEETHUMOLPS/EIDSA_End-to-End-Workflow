@@ -230,7 +230,7 @@ public class DMS extends AbstractComponent{
 				appr3.click();
 				Thread.sleep(2000);
 				WebElement uploadbtn=driver.findElement(By.xpath("//input[@id='InPutFile']"));
-				uploadbtn.sendKeys("C:\\Users\\NeethumolPS\\Downloads\\Excel.xlsx");
+				uploadbtn.sendKeys("C:\\Users\\NeethumolPS\\Downloads\\UAT EIDSA - E-Consent(1).docx");
 				AddFile.click();
 			    Thread.sleep(2000);
 			}
