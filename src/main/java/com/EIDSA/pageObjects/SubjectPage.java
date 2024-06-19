@@ -30,6 +30,8 @@ public class SubjectPage extends AbstractComponent{
 	}
 	
 	//Subject menu
+	@FindBy(xpath = "//span[normalize-space()='Items']")
+	WebElement items;
 	@FindBy(xpath = "//span[normalize-space()='Subjects']")
 	WebElement subject;	
 	
@@ -221,6 +223,13 @@ public class SubjectPage extends AbstractComponent{
 	{
 		Thread.sleep(2000);
 		subject.click();
+		Thread.sleep(2000);
+	}
+	
+	public void clickItems() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		items.click();
 		Thread.sleep(2000);
 	}
 	

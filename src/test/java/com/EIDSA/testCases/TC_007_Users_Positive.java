@@ -29,6 +29,7 @@ public class TC_007_Users_Positive extends BaseClassTest{
 		up.userCreationAlert();
 	}	
 	
+	
 	@Test(dataProvider="DD2",priority=2, description = "Edit the user details")
 	public void userEdit(String mail) throws InterruptedException
 	{
@@ -38,6 +39,7 @@ public class TC_007_Users_Positive extends BaseClassTest{
 	    up.edit2("");
 	    up.userUpdationAlert();
 	}
+	
 	
 	@Test(dataProvider="DD2",priority=3, description = "Delete the user")
 	public void userDelete(String mail) throws IOException, InterruptedException
@@ -52,7 +54,7 @@ public class TC_007_Users_Positive extends BaseClassTest{
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Users.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\eclipse-workspace\\EndToEnd_EIDSA\\testData\\Users.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	
@@ -73,7 +75,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 	 String [][] getData2() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Users.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\eclipse-workspace\\EndToEnd_EIDSA\\testData\\Users.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet2");
 	int colcount=XLUtility.getCellCount(path, "Sheet2", 1);
 	

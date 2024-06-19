@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.EIDSA.testCases.TC_005_Roles_Positive">
+      <class name="com.EIDSA.testCases.TC_018_PartiallyFilledForms">
         <methods>
           <include name="setup"/>
-          <include name="roleCreation"/>
-          <include name="roleEdit"/>
+          <include name="signAndUnsign"/>
+          <include name="submitForm"/>
           <include name="tearDown"/>
-          <include name="roleDelete"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_005_Roles_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_018_PartiallyFilledForms -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

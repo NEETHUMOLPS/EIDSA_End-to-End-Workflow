@@ -40,18 +40,18 @@ public class TC_004_Profiles_Positive extends BaseClass{
 		pp.Alert3();		
 	}
 	
-	@Test(dataProvider="DD4",priority=4, description = "Set up the default Study")
-	public void defaultSetup(String study) throws IOException, InterruptedException
+	@Test(priority=4, description = "Set up the default Study")
+	public void defaultSetup() throws IOException, InterruptedException
 	{
 		Profile pp = new Profile(driver);
-		pp.defaultSetup(study);		
+		pp.defaultSetup("566", "English", "DD-MM-YYYY", "12 hrs");		
 	}
 	
 	@DataProvider(name="DD1")
 	 String [][] getData1() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\eclipse-workspace\\EndToEnd_EIDSA\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet1");
 	int colcount=XLUtility.getCellCount(path, "Sheet1", 1);
 	
@@ -72,7 +72,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet1");
 	 String [][] getData2() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\eclipse-workspace\\EndToEnd_EIDSA\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet2");
 	int colcount=XLUtility.getCellCount(path, "Sheet2", 1);
 	
@@ -93,7 +93,7 @@ int rownum=XLUtility.getRowCount(path, "Sheet2");
 	 String [][] getData3() throws IOException
 	{
 		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
+		String path = "C:\\Users\\NeethumolPS\\eclipse-workspace\\EndToEnd_EIDSA\\testData\\Profile.xlsx";
 int rownum=XLUtility.getRowCount(path, "Sheet3");
 	int colcount=XLUtility.getCellCount(path, "Sheet3", 1);
 	
@@ -110,25 +110,6 @@ int rownum=XLUtility.getRowCount(path, "Sheet3");
 
 	}
 	
-	@DataProvider(name="DD4")
-	 String [][] getData4() throws IOException
-	{
-		//String path=System.getProperty("user.dir")+"/src/main/java/com/EIDSA/testData/EIDSA_Login_Negative.xlsx.xlsx";
-		String path = "C:\\Users\\NeethumolPS\\git\\EIDSA_IntegrationTest\\testData\\Profile.xlsx";
-int rownum=XLUtility.getRowCount(path, "Sheet4");
-	int colcount=XLUtility.getCellCount(path, "Sheet4", 1);
 	
-	String data[][]=new String[rownum][colcount];
-	for(int i=1;i<=rownum;i++)
-	{
-		for(int j=0;j<colcount;j++)
-		{
-			data[i-1][j]=XLUtility.getCellData(path, "Sheet4", i, j);
-		}
-	}
-	
-	return data;	
-
-	}
 
 }

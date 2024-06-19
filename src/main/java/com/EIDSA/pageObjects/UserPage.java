@@ -103,7 +103,7 @@ public class UserPage extends AbstractComponent{
 	WebElement setPrivilege;
 	@FindBy(xpath="//div[@id='page-wrapper']/div[3]/div/div/div/div")
 	WebElement selectStudy1;
-	@FindBy(xpath="//span[normalize-space()='IDS01']")
+	@FindBy(xpath="//span[normalize-space()='IDS04']")
 	WebElement selectStudy2;
 	@FindBy(xpath="//span[normalize-space()='001']")
 	WebElement selectStudy3;

@@ -18,14 +18,26 @@
 <class name="com.EIDSA.testCases.TC_007_Users_Positive"/>
 <class name="com.EIDSA.testCases.TC_008_Study_Positive"/>
 <class name="com.EIDSA.testCases.TC_009_StudyProfile_Positive"/>
-<class name="com.EIDSA.testCases.TC_010_FillForm_Positive"/>
-<class name="com.EIDSA.testCases.TC_011_DMS_Positive"/>-->
+<class name="com.EIDSA.testCases.TC_010_Sub_VisitScheduleList"/>
+<class name="com.EIDSA.testCases.TC_011_EConsent"/>
+<class name="com.EIDSA.testCases.TC_012_Visits"/>
+<class name="com.EIDSA.testCases.TC_013_PatientLogin"/>
+<class name="com.EIDSA.testCases.TC_014_UnscheduledTemplate"/>
+<class name="com.EIDSA.testCases.TC_015_SitePrivilege"/>
+<class name="com.EIDSA.testCases.TC_016_Filedprivilege
+<class name="com.EIDSA.testCases.TC_017_FillForm
+<class name="com.EIDSA.testCases.TC_018_PartiallyFilledForms
+<class name="com.EIDSA.testCases.TC_019_UnassignedForm
+<class name="com.EIDSA.testCases.TC_020_SubmittedForm
+<class name="com.EIDSA.testCases.TC_021_Queries
+<class name="com.EIDSA.testCases.TC_022_FormTransfer
+<class name="com.EIDSA.testCases.TC_023_SubjectTransfer-->
 
 
 
 
 
-<class name="com.EIDSA.testCases.TC_011_DMS_Positive"/>
+<class name="com.EIDSA.testCases.TC_023_SubjectTransfer"/>
 
 <!--  <methods>
                <include name="negativeTest6" />

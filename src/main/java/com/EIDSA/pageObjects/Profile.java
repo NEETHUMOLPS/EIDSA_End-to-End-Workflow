@@ -92,11 +92,11 @@ public class Profile extends AbstractComponent{
 	//Default Setup
 	@FindBy(xpath = "//a[normalize-space()='Default Setup']")
 	WebElement defaultSetup;
-	@FindBy(xpath = "(//select)[2]")
+	@FindBy(xpath = "(//select[@class='form-select'])[1]")
 	WebElement defaultStudyConfig;
 	@FindBy(xpath = "(//button[@type='button'][normalize-space()='Save'])[1]")
 	WebElement saveDefaultStudyConfig;
-	@FindBy(xpath = "(//select)[3]")
+	@FindBy(xpath = "(//select[@class='form-select'])[2]")
 	WebElement language;
 	@FindBy(xpath = "(//button[@type='button'][normalize-space()='Save'])[2]")
 	WebElement saveLanguage;
@@ -223,7 +223,7 @@ public class Profile extends AbstractComponent{
 		}	
 	}
 	
-	public void defaultSetup(String study/*,String lan,String dt,String tm*/) throws InterruptedException
+	public void defaultSetup(String study,String lan,String dt,String tm) throws InterruptedException
 	{
 		Thread.sleep(2000);
 		defaultSetup.click();
@@ -239,7 +239,7 @@ public class Profile extends AbstractComponent{
 		Assert.assertTrue(alert1.getText().contains("Default study updated successfully"));
 		alert1.accept();
 		Thread.sleep(2000);
-		/*Select sel2 = new Select(language);
+		Select sel2 = new Select(language);
 		sel2.selectByVisibleText(lan);
 		Thread.sleep(2000);
 		saveLanguage.click();
@@ -271,7 +271,7 @@ public class Profile extends AbstractComponent{
 		Alert alert4 = driver.switchTo().alert();
 		Assert.assertTrue(alert4.getText().contains("Default time format updated successfully"));
 		alert4.accept();
-		Thread.sleep(2000);*/
+		Thread.sleep(2000);
 	}
 	
 	public static boolean Alert4() throws InterruptedException

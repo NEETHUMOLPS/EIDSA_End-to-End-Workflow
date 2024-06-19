@@ -15,7 +15,7 @@ public class TC_005_Roles_Positive extends BaseClassTest {
 	{
 		Roles rp=new Roles(driver);
 		rp.clickRoles();
-		rp.createRoles("Automation Tester","");
+		rp.createRoles("Automation Tester01","");
 		rp.Alert1();
 		logger.info("Role added successfully");	
 	}
@@ -25,8 +25,8 @@ public class TC_005_Roles_Positive extends BaseClassTest {
 	public void roleEdit() throws IOException, InterruptedException
 	{
 		Roles rp=new Roles(driver);
-		rp.searchRoles("Automation Tester");
-		rp.edit("Automation Tester");
+		rp.searchRoles("Automation Tester01");
+		rp.edit("Automation Tester01");
 		rp.editData("Testing");
 		rp.Alert2();
 		logger.info("Role updated");			
@@ -35,8 +35,8 @@ public class TC_005_Roles_Positive extends BaseClassTest {
 	public void roleDelete() throws IOException, InterruptedException
 	{
 		Roles rp=new Roles(driver);
-		rp.searchRoles("Automation Tester");
-		rp.delete("Automation Tester");
+		rp.searchRoles("Automation Tester01");
+		rp.delete("Automation Tester01");
 		rp.Alert4();
 		logger.info("Role deleted successfully");	
 	}

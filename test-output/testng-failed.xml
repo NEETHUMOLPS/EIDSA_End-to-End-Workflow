@@ -7,15 +7,16 @@
   <test thread-count="5" name="EIDSA App Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.EIDSA.testCases.TC_011_DMS_Positive">
+      <class name="com.EIDSA.testCases.TC_021_Queries">
         <methods>
           <include name="setup"/>
-          <include name="viewDocument"/>
-          <include name="approveDocument"/>
-          <include name="uploadDocument"/>
+          <include name="ViewForm"/>
+          <include name="exportPdf"/>
+          <include name="reply"/>
           <include name="tearDown"/>
+          <include name="replyAndClose"/>
         </methods>
-      </class> <!-- com.EIDSA.testCases.TC_011_DMS_Positive -->
+      </class> <!-- com.EIDSA.testCases.TC_021_Queries -->
     </classes>
   </test> <!-- EIDSA App Test(failed) -->
 </suite> <!-- Failed suite [Medical Application] -->

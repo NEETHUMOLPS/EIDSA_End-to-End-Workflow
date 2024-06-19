@@ -41,70 +41,24 @@ public class FillForm extends AbstractComponent{
 	List<WebElement> TableSubId;
 	@FindBy(xpath = "//td[3]")
 	List<WebElement> TableVisitName;
-	@FindBy(xpath = "//td[6]")
-	List<WebElement> TableSubmitForm;
+	@FindBy(xpath = "//tbody/tr[1]/td[6]/i[1]")
+	WebElement TableSubmitForm1;
+	@FindBy(xpath = "//tbody/tr[2]/td[6]/i[1]")
+	WebElement TableSubmitForm2;
 	
-	@FindBy(xpath = "//i[@class='fa fa-plus-square edit-delete']")
+	@FindBy(xpath = "//button[normalize-space()='Review And Submit']")
 	WebElement reviewAndSubmitForm;
-	@FindBy(xpath = "//i[@class='fa fa-plus-square edit-delete']")
+	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement saveForm;
-	@FindBy(xpath = "(//button[normalize-space()='Save'])[1]")
-	WebElement Save;
-	@FindBy(xpath = "(//button[normalize-space()='Review And Submit'])[1]")
-	WebElement ReviewAndSubmit;
+
 	
 	@FindBy(xpath = "//input[@type='textbox']")
 	WebElement nameField;
-	
-	//Partially filled forms
-	@FindBy(xpath = "//span[normalize-space()='Items']")
-	WebElement items;
-	@FindBy(xpath = "//span[normalize-space()='Partially Filled Forms']")
-	WebElement partiallyFilledForms;
-	
-	@FindBy(xpath = "//td[1]")
-	List<WebElement> TableSiteCode1;
-	@FindBy(xpath = "//td[2]")
-	List<WebElement> TableSubId1;
-	@FindBy(xpath = "//td[3]")
-	List<WebElement> TableVisitName1;
-	@FindBy(xpath = "//i[@class='fa fa-eye editicon']")
-	WebElement view1;
 	
 	//Data entry
 	@FindBy(xpath = "//a[normalize-space()='V01 - V01']")
 	WebElement dataEntry;
 	
-	//Map unassigned form
-	@FindBy(xpath = "//span[normalize-space()='Unassigned Forms']")
-	WebElement unassignedForms;
-	
-	@FindBy(xpath = "(//i[@class='fa fa-eye editicon'])[1]")
-	WebElement view2;
-	@FindBy(xpath = "(//select[@name='account'])[2]")
-	WebElement SiteCode;
-	@FindBy(xpath = "(//select[@name='account'])[3]")
-	WebElement SubjectId;
-	@FindBy(xpath = "//span[@type='button']")
-	WebElement MapForm;
-	
-	public void unassignedForms(String site,String sub) throws InterruptedException
-	{
-		Thread.sleep(2000);
-		unassignedForms.click();
-		Thread.sleep(2000);
-		view2.click();
-		Thread.sleep(2000);
-		Select sel = new Select(SiteCode);
-		sel.selectByVisibleText(site);
-		Thread.sleep(2000);
-		Select sel1 = new Select(SubjectId);
-		sel1.selectByVisibleText(sub);
-		Thread.sleep(2000);
-		MapForm.click();
-		Thread.sleep(2000);
-		
-	}
 	
 	
 	public void selectStudy1(String study) throws InterruptedException
@@ -115,30 +69,9 @@ public class FillForm extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
-	public void partiallyFilledForms() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		items.click();
-		Thread.sleep(2000);
-		partiallyFilledForms.click();
-		Thread.sleep(2000);
-		view1.click();
-		Thread.sleep(2000);
-		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
-		jse1.executeScript("window.scrollBy(0,200)");
-		Thread.sleep(2000);
-		ReviewAndSubmit.click();
-		Thread.sleep(2000);
-		
-	}
 	
 	public void dataEntry(String nm) throws InterruptedException
 	{
-		Thread.sleep(2000);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,300)");
-		Thread.sleep(2000);
-		FillForm.click();
 		Thread.sleep(2000);
 		JavascriptExecutor jse1 = (JavascriptExecutor)driver;
 		jse1.executeScript("window.scrollBy(0,200)");
@@ -147,7 +80,7 @@ public class FillForm extends AbstractComponent{
 		Thread.sleep(2000);
 		nameField.sendKeys(nm);
 		Thread.sleep(2000);
-		ReviewAndSubmit.click();
+		reviewAndSubmitForm.click();
 		Thread.sleep(2000);
 		
 	}
@@ -240,31 +173,18 @@ public class FillForm extends AbstractComponent{
 		Thread.sleep(2000);
 	}
 	
-	public void reviewAndSubmit() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		ReviewAndSubmit.click();
-		Thread.sleep(2000);
-	}
-	
-	public void save() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Save.click();
-		Thread.sleep(2000);
-	}
 	
 	public void selectForm1() throws InterruptedException 
 	{
 		Thread.sleep(2000);
-		reviewAndSubmitForm.click();
+		TableSubmitForm1.click();
 		Thread.sleep(2000);
 	}
 	
 	public void selectForm2() throws InterruptedException 
 	{
 		Thread.sleep(2000);
-		saveForm.click();
+		TableSubmitForm2.click();
 		Thread.sleep(2000);
 	}
 	
@@ -276,8 +196,8 @@ public class FillForm extends AbstractComponent{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(2000);
-		elementWait(Save);
-		Save.click();
+		elementWait(saveForm);
+		saveForm.click();
 		Thread.sleep(2000);
 	}
 	
@@ -290,9 +210,18 @@ public class FillForm extends AbstractComponent{
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,100)");
-		elementWait(ReviewAndSubmit);
-		ReviewAndSubmit.click();
+		elementWait(reviewAndSubmitForm);
+		reviewAndSubmitForm.click();
 		Thread.sleep(2000);
+	}
+	
+	public String Alert() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Alert alert=driver.switchTo().alert();
+		String msg=alert.getText();
+		alert.accept();
+		return msg;	
 	}
 	
 
